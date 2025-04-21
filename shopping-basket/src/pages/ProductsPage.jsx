@@ -4,7 +4,14 @@ function ProductsPage() {
   const products = useProduct();
   console.log(products);
 
-  return <div>ProductsPage</div>;
+  return (
+    <div className="flex justify-between">
+      <div className="w-full flex flex-wrap justify-between">{products.map(p => (
+        <p key={p.id}>{p.title}</p>
+      ))}</div>
+      <div>Sidebar</div>
+    </div>
+  );
 }
 
 export default ProductsPage;
