@@ -9,11 +9,11 @@ function ProductsProvider({ children }) {
     const fetchProducts = async () => {
       try {
         setProducts(await api.get("/products"));
-        fetchProducts();
       } catch (error) {
         console.log(error.message);
       }
     };
+    fetchProducts();
   }, []);
   return (
     <ProductsContext.Provider value={products}>
@@ -21,9 +21,9 @@ function ProductsProvider({ children }) {
     </ProductsContext.Provider>
   );
 }
-const useProductContext = () => {
-  const products = useContext(ProductsContext)
-  return products
-}
+const useProduct = () => {
+  const products = useContext(ProductsContext);
+  return products;
+};
 export default ProductsProvider;
-export {useProductContext}
+export { useProduct };
