@@ -7,7 +7,7 @@ function ProductsPage() {
 
   return (
     <div className="flex justify-between">
-      <div className="w-full flex flex-wrap justify-between">{products.map(p => (
+      <div className="w-full flex flex-wrap justify-between ">{products.map(p => (
         <Card key={p.id} data={p} />
       ))}</div>
       <div>Sidebar</div>
